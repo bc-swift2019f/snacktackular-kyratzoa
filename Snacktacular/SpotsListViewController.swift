@@ -23,7 +23,7 @@ class SpotsListViewController: UIViewController {
         super.viewDidLoad()
         
         authUI = FUIAuth.defaultAuthUI()
-        authUI?.delegate = self
+        authUI?.delegate = self as! FUIAuthDelegate
         
         tableView.dataSource = self
         tableView.delegate = self
