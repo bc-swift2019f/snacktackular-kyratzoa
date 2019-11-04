@@ -9,6 +9,7 @@
 import Foundation
 import CoreLocation
 import Firebase
+import MapKit
 
 class Spot: NSObject, MKAnnotation {
     var name: String
@@ -35,7 +36,7 @@ class Spot: NSObject, MKAnnotation {
     }
     
     var dictionary: [String: Any]{
-        return ["name" : name, "address": address, "longitude": longitude, "latitude": latitude, "averageRating": averageRating, "numberOfRows": numberOfReviews, "postingUserID": postingUserID]
+        return ["name" : name, "address": address, "longitude": longitude, "latitude": latitude, "averageRating": averageRating, "numberOfReviews": numberOfReviews, "postingUserID": postingUserID]
     }
     
     init(name: String, address: String, coordinate: CLLocationCoordinate2D, averageRating: Double, numberOfReviews: Int, postingUserID: String, documentID: String ) {
@@ -47,7 +48,7 @@ class Spot: NSObject, MKAnnotation {
         self.postingUserID = postingUserID
         self.documentID = documentID
     }
-    convenience init (){
+    convenience override init (){
         self.init(name: "", address: "", coordinate: CLLocationCoordinate2D(), averageRating: 0.0, numberOfReviews: 0, postingUserID: "", documentID: "")
     }
     
@@ -58,8 +59,7 @@ class Spot: NSObject, MKAnnotation {
         let numberOfReviews = dictionary["numberOfReviews"] as! Int? ?? 0
         let latitude = dictionary["latitude"] as! CLLocationDegrees? ?? 0.0
         let longitude = dictionary["longitude"] as! CLLocationDegrees? ?? 0.0
-        let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude:
-            longitude)
+        let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         let postingUserID = dictionary["postingUserID"] as! String? ?? ""
         self.init(name: name, address: address, coordinate: coordinate, averageRating: averageRating, numberOfReviews: numberOfReviews, postingUserID:
          postingUserID, documentID: "")
@@ -99,8 +99,5 @@ class Spot: NSObject, MKAnnotation {
                 }
             }
         }
-        
     }
-    
-    
 }

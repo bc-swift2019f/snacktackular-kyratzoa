@@ -205,6 +205,7 @@ DEPENDENCIES:
   - Firebase/Firestore
   - Firebase/Storage
   - FirebaseUI
+  - FirebaseUI/Email
   - GoogleMaps
   - GooglePlacePicker
   - GooglePlaces
@@ -277,6 +278,6 @@ SPEC CHECKSUMS:
   Protobuf: a4dc852ad69c027ca2166ed287b856697814375b
   SDWebImage: c10d14a8883ebd89664f02a422006f66a85c0c5d
 
-PODFILE CHECKSUM: 9395a8f0ac9c27d2053e9643dac3e753fe5fba28
+PODFILE CHECKSUM: eec34bfc7d6a7c3112c5e32034086156bde9b09b
 
 COCOAPODS: 1.8.4

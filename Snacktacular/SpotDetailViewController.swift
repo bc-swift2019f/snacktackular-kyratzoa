@@ -28,13 +28,13 @@ class SpotDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mapView.delegate = self
+        //mapView.delegate = self
         
         if spot == nil{
             spot = Spot()
             getLocation()
         }
-        let region = MKCoordinateRegion(spot.coordinate, regionDistance, regionDistance)
+        let region = MKCoordinateRegion (center: spot.coordinate, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
         mapView.setRegion(region, animated: true)
         updateUserInterface()
     }
@@ -55,7 +55,7 @@ class SpotDetailViewController: UIViewController {
     func updateMap(){
         mapView.removeAnnotations(mapView.annotations)
         mapView.addAnnotation(spot)
-        mapView.center(spot.coordinate, animated: true)
+        mapView.setCenter(spot.coordinate, animated: true)
     }
     
     func leaveViewController(){

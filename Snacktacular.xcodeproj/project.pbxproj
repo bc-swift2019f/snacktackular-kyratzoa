@@ -16,9 +16,9 @@
 		3E8390E5206597F600512DEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E8390E3206597F600512DEA /* Main.storyboard */; };
 		3E8390E7206597F600512DEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E8390E6206597F600512DEA /* Assets.xcassets */; };
 		3E8390EA206597F600512DEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E8390E8206597F600512DEA /* LaunchScreen.storyboard */; };
+		5D9588CA237090DB00312E1A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D9588C9237090DB00312E1A /* GoogleService-Info.plist */; };
 		5DA747782369133F0052F9B6 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA747772369133F0052F9B6 /* Spot.swift */; };
 		5DA7477A236914630052F9B6 /* Spots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA74779236914630052F9B6 /* Spots.swift */; };
-		5DE3C4C1236F3098001E718C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5DE3C4C0236F3098001E718C /* GoogleService-Info.plist */; };
 		B554D0B4CEC6C691412B844F /* Pods_Snacktacular.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61A6D4632A02848827646383 /* Pods_Snacktacular.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,9 +34,9 @@
 		3E8390E6206597F600512DEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E8390E9206597F600512DEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E8390EB206597F600512DEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D9588C9237090DB00312E1A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5DA747772369133F0052F9B6 /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
 		5DA74779236914630052F9B6 /* Spots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spots.swift; sourceTree = "<group>"; };
-		5DE3C4C0236F3098001E718C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		61A6D4632A02848827646383 /* Pods_Snacktacular.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Snacktacular.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BB51B4BF5A771085517A6B8 /* Pods-Snacktacular.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snacktacular.debug.xcconfig"; path = "Target Support Files/Pods-Snacktacular/Pods-Snacktacular.debug.xcconfig"; sourceTree = "<group>"; };
 		7B729A8F032E11BD5DB5B292 /* Pods-Snacktacular.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snacktacular.release.xcconfig"; path = "Target Support Files/Pods-Snacktacular/Pods-Snacktacular.release.xcconfig"; sourceTree = "<group>"; };
@@ -96,7 +96,7 @@
 				3E8390E6206597F600512DEA /* Assets.xcassets */,
 				3E8390E8206597F600512DEA /* LaunchScreen.storyboard */,
 				3E8390EB206597F600512DEA /* Info.plist */,
-				5DE3C4C0236F3098001E718C /* GoogleService-Info.plist */,
+				5D9588C9237090DB00312E1A /* GoogleService-Info.plist */,
 			);
 			path = Snacktacular;
 			sourceTree = "<group>";
@@ -172,7 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E8390EA206597F600512DEA /* LaunchScreen.storyboard in Resources */,
-				5DE3C4C1236F3098001E718C /* GoogleService-Info.plist in Resources */,
+				5D9588CA237090DB00312E1A /* GoogleService-Info.plist in Resources */,
 				3E8390E7206597F600512DEA /* Assets.xcassets in Resources */,
 				3E8390E5206597F600512DEA /* Main.storyboard in Resources */,
 			);

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vfD-nU-yAv">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vfD-nU-yAv">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,7 +26,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2IP-ka-3K6" id="X51-Os-IPJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqC-12-jiu">
@@ -127,11 +129,11 @@
             <objects>
                 <viewController id="L7d-5i-Cie" customClass="SpotDetailViewController" customModule="Snacktacular" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="atJ-Va-hnz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9OL-9e-xjv">
-                                <rect key="frame" x="0.0" y="56" width="375" height="619"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="npF-xl-bxb">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
@@ -206,7 +208,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BPa-i5-pra">
-                                            <rect key="frame" x="255" y="342" width="114" height="29"/>
+                                            <rect key="frame" x="278" y="342" width="91" height="29"/>
                                             <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="29" id="BRz-iv-XVn"/>
@@ -223,7 +225,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HJ-pv-dUi">
-                                            <rect key="frame" x="155" y="342" width="92" height="29"/>
+                                            <rect key="frame" x="179" y="342" width="91" height="29"/>
                                             <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="88" id="Hxq-rC-E1p"/>
@@ -277,10 +279,10 @@
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReviewCell" id="H2C-9f-qks" customClass="SpotReviewsTableViewCell" customModule="Snacktacular" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="403" width="375" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="403" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="H2C-9f-qks" id="OE9-Y8-sOa">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title of Review" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1Z-ix-Pxw">
@@ -423,14 +425,14 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="bJy-tV-PMh" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BjU-Ke-IaF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.92156862750000001" green="0.38503211739999998" blue="0.2430487573" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Nw6-uG-s4N">
-                        <rect key="frame" x="0.0" y="675" width="375" height="49"/>
+                        <rect key="frame" x="0.0" y="729" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.98994106049999997" green="0.42899215219999998" blue="0.2929582" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
