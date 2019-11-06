@@ -19,6 +19,8 @@ class SpotDetailViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var saveBarButton: UIBarButtonItem!
+    @IBOutlet weak var cancelBarButton: UIBarButtonItem!
     
     var spot: Spot!
     let regionDistance: CLLocationDistance = 750    // 750 meters or about a half a mile
@@ -27,13 +29,31 @@ class SpotDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //hid keyboard if we touch outside of a field
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
         //mapView.delegate = self
         
-        if spot == nil{
+        if spot == nil{//we are adding a new record field if it doesnt already exist
             spot = Spot()
             getLocation()
+            //editable fields should have a border around them
+            nameField.addBorder(width: 0.5, radius: 5.0, color: .black)
+            addressField.addBorder(width: 0.5, radius: 5.0, color: .black)
+        } else {
+            //disable text editing field
+            nameField.isEnabled = false
+            addressField.isEnabled = false
+            nameField.backgroundColor = UIColor.clear
+            addressField.backgroundColor = UIColor.white
+            //Save and Cancel buttons should be hidden
+            saveBarButton.title = ""
+            cancelBarButton.title = ""
+            //Hide Toolbar so lookup place isn't available
+            navigationController?.setToolbarHidden(true, animated: true)
         }
+        
         let region = MKCoordinateRegion (center: spot.coordinate, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
         mapView.setRegion(region, animated: true)
         updateUserInterface()
@@ -67,6 +87,19 @@ class SpotDetailViewController: UIViewController {
         }
     }
 
+    @IBAction func textFieldEditingChanged(_ sender: UITextField) {
+        saveBarButton.isEnabled = !(nameField.text == "")
+    }
+    
+    @IBAction func textFieldReturnPressed(_ sender: UITextField) {
+        sender.resignFirstResponder()
+        spot.name = nameField.text!
+        spot.address = addressField.text!
+        updateUserInterface()
+    }
+    
+    
+    
     @IBAction func photoButtonPressed(_ sender: UIButton) {
     }
     
