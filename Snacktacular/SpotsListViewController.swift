@@ -13,6 +13,7 @@ import FirebaseUI
 import GoogleSignIn
 
 class SpotsListViewController: UIViewController {
+    @IBOutlet weak var sortSegmentedControl: UISegmentedControl!
     
     @IBOutlet weak var tableView: UITableView!
     var spots: Spots!
@@ -33,6 +34,7 @@ class SpotsListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         spots.loadData {
             self.tableView.reloadData()
+            self.sortBasedOnSegmentPressed()
         }
     }
     
@@ -67,6 +69,24 @@ class SpotsListViewController: UIViewController {
         }
     }
     
+    func sortBasedOnSegmentPressed(){
+        switch sortSegmentedControl.selectedSegmentIndex {
+        case 0://A-Z
+            spots.spotArray.sort(by: {$0.name < $1.name })
+        case 1: //Closest
+            print("TO DO")
+        case 2: //Avg Rating
+            print("TO DO")
+        default:
+            print("*** ERROR:Hey you shouldnt have gotten here, our segmented control should just have 3 segments")
+            
+        }
+    }
+    
+    @IBAction func sortSegmentPressed(_ sender: UISegmentedControl) {
+        sortBasedOnSegmentPressed()
+    }
+    
     @IBAction func signOutPressed(_ sender: UIBarButtonItem) {
         do{
             try authUI!.signOut()
@@ -77,7 +97,6 @@ class SpotsListViewController: UIViewController {
             tableView.isHidden = true
             print("**** Couldn't sign out")
         }
-        
     }
 }
 
