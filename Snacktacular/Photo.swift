@@ -32,6 +32,14 @@ class Photo{
         self.init(image: UIImage(), description: "", postedBy: postedBy, date: Date(), documentUUID: "")
     }
     
+    convenience init(dictionary: [String: Any]) {
+        let description = dictionary["description"] as! String? ?? ""
+        let postedBy = dictionary["postedBy"] as! String? ?? ""
+        let time = dictionary["date"] as! Timestamp?
+        let date = time?.dateValue() ?? Date()
+        self.init(image: UIImage(), description: description, postedBy: postedBy, date: date, documentUUID: "")
+    }
+    
     func saveData(spot: Spot, completed: @escaping (Bool) -> ()) {
         let db = Firestore.firestore()
         let storage = Storage.storage() // Create a Storage instance, just like db
@@ -40,11 +48,20 @@ class Photo{
             print("*** ERROR: creating imageData from JPEGRepresentation")
             return completed(false)
         }
+        
+        let uploadMetadata = StorageMetadata()
+        uploadMetadata.contentType = "image/jpeg"
+        
         documentUUID = UUID().uuidString // Create a unique doc name
         let storageRef =
             storage.reference().child(spot.documentID).child(self.documentUUID)
         // Save it & check the result
-        let uploadTask = storageRef.putData(photoData)
+        let uploadTask = storageRef.putData(photoData, metadata: uploadMetadata) { metadata, error in
+            guard error == nil else {
+                print("😡😡😡 ERROR during .putData storage upload for reference \(storageRef). Error:\(error!.localizedDescription)")
+                return
+            }
+        }
         
         uploadTask.observe(.success) { snapshot in // Report if update is successful
             // Save photo name & other info to "photos" collection for spot.documentID
