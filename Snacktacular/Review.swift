@@ -35,7 +35,8 @@ class Review{
         let text = dictionary["text"] as! String? ?? ""
         let rating = dictionary["rating"] as! Int? ?? 0
         let reviewerUserID = dictionary["reviewerUserID"] as! String
-        let date = dictionary["date"] as! Date? ?? Date()
+        let time = dictionary["date"] as! Timestamp?
+        let date = time?.dateValue() ?? Date()
         self.init(title: title, text: text, rating: rating, reviewerUserID: reviewerUserID, date: date, documentID: "")
     }
     
