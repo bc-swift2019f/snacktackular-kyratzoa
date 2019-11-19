@@ -75,4 +75,16 @@ class Review{
         }
     }
     
+    func deleteData(spot: Spot, completed: @escaping (Bool) -> ()){
+        let db = Firestore.firestore()
+        db.collection("spots").document(spot.documentID).collection("reviews").document(documentID).delete(){ error in
+            if let error = error {
+                print("😡😡😡 ERROR: deleting review documentID \(self.documentID) \(error.localizedDescription)")
+            } else{
+                completed(true)
+            }
+        }
+        
+    }
+    
 }
