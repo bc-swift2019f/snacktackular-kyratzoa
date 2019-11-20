@@ -32,6 +32,18 @@ class SnackUser{
         self.init(email: user.email ?? "", displayName: user.displayName ?? "", photoURL: (user.photoURL != nil ? "\(user.photoURL!)" : ""), userSince: Date(), documentID: user.uid)
     }
     
+    convenience init(dictionary: [String: Any?]){
+        let email = dictionary["email"] as! String? ?? ""
+        let displayName = dictionary["displayName"] as! String? ?? ""
+        let photoURL = dictionary["photoURL"] as! String? ?? ""
+        
+        let time = dictionary["userSince"] as! Timestamp?
+        let userSince = time?.dateValue() ?? Date()
+        //let userSince = dictionary["userSince"] as! Date? ?? Date()
+        
+        self.init(email: email, displayName: displayName, photoURL: photoURL, userSince: userSince, documentID: "")
+    }
+    
     func saveIfNewUser(){
         let db = Firestore.firestore()
         let userRef = db.collection("users").document("\(documentID)")
@@ -55,6 +67,7 @@ class SnackUser{
             if let error = error {
                 print("ERROR: adding user \(error.localizedDescription) with user \(self.documentID)")
             }
+            
         }
     }
     

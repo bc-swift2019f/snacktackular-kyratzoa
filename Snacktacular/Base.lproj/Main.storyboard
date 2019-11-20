@@ -108,11 +108,18 @@
                         </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="1A4-7d-Reh">
-                        <barButtonItem key="leftBarButtonItem" title="Sign Out" id="0Xl-Y6-OJl">
-                            <connections>
-                                <action selector="signOutPressed:" destination="BYZ-38-t0r" id="9pd-lW-91D"/>
-                            </connections>
-                        </barButtonItem>
+                        <leftBarButtonItems>
+                            <barButtonItem title="Sign Out" id="0Xl-Y6-OJl">
+                                <connections>
+                                    <action selector="signOutPressed:" destination="BYZ-38-t0r" id="9pd-lW-91D"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="users" id="gpl-km-gnw">
+                                <connections>
+                                    <segue destination="9dI-gU-1A7" kind="show" id="F9u-kV-1om"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="h6L-yW-eBN">
                             <connections>
                                 <segue destination="bJy-tV-PMh" kind="presentation" identifier="AddSpot" id="Pko-9g-ZUS"/>
@@ -127,6 +134,93 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="375.19999999999999" y="35.467980295566505"/>
+        </scene>
+        <!--Snack Users List View Controller-->
+        <scene sceneID="fLz-rY-S6G">
+            <objects>
+                <viewController id="9dI-gU-1A7" customClass="SnackUsersListViewController" customModule="Snacktacular" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2H3-s6-TEK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Dq-YV-Qmr">
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="80" id="BEc-rg-dcW" customClass="SnackUserTableViewCell" customModule="Snacktacular" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BEc-rg-dcW" id="KF4-Vl-VPs">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.666666666666671"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Om2-ht-1Ag">
+                                                    <rect key="frame" x="15" y="4" width="70" height="70"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Display Name Here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEZ-le-rVn">
+                                                    <rect key="frame" x="93" y="4" width="267" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="firstname.lastname@gmail.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Izv-dL-xkp">
+                                                    <rect key="frame" x="191" y="29" width="184" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User Since:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQK-ng-U8F">
+                                                    <rect key="frame" x="93" y="48" width="90" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0AK-DU-daF">
+                                                    <rect key="frame" x="93" y="29" width="90" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dec. 32, 1999" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NjS-4g-dbn">
+                                                    <rect key="frame" x="191" y="48" width="184" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="displayNameLabel" destination="WEZ-le-rVn" id="vr4-PK-AY0"/>
+                                            <outlet property="emailLabel" destination="Izv-dL-xkp" id="9wA-Iw-Cd9"/>
+                                            <outlet property="photoImage" destination="Om2-ht-1Ag" id="CMh-YU-P5F"/>
+                                            <outlet property="userSinceLabel" destination="NjS-4g-dbn" id="VQv-km-eTv"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Dq-YV-Qmr" firstAttribute="leading" secondItem="mXG-AF-5a8" secondAttribute="leading" id="FPo-0G-DOJ"/>
+                            <constraint firstItem="mXG-AF-5a8" firstAttribute="bottom" secondItem="6Dq-YV-Qmr" secondAttribute="bottom" id="KsF-rk-Qb4"/>
+                            <constraint firstItem="6Dq-YV-Qmr" firstAttribute="top" secondItem="mXG-AF-5a8" secondAttribute="top" id="dJG-81-QjQ"/>
+                            <constraint firstItem="mXG-AF-5a8" firstAttribute="trailing" secondItem="6Dq-YV-Qmr" secondAttribute="trailing" id="tOV-dv-KFl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mXG-AF-5a8"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="6Dq-YV-Qmr" id="qXR-MK-QzJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ML3-Ry-kfs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1248.8" y="617.73399014778329"/>
         </scene>
         <!--Spot Detail View Controller-->
         <scene sceneID="uGH-1g-fh3">
@@ -408,7 +502,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rJ7-DN-Wz3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2136.8000000000002" y="34.729064039408868"/>
+            <point key="canvasLocation" x="2135" y="35"/>
         </scene>
         <!--Review Table View Controller-->
         <scene sceneID="0Uk-it-lKz">
@@ -768,7 +862,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gOD-hG-Ocx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1249" y="-291"/>
+            <point key="canvasLocation" x="1249" y="-321"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rwb-pD-hwc">
@@ -798,9 +892,10 @@
         <image name="camera-icon-white" width="24" height="17"/>
         <image name="star-empty" width="158" height="150"/>
         <image name="star-white" width="30.666666030883789" height="29"/>
+        <image name="users" width="24.333333969116211" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="cM2-cK-a4M"/>
-        <segue reference="sl5-aU-Gjj"/>
+        <segue reference="Zox-RK-nHB"/>
     </inferredMetricsTieBreakers>
 </document>
