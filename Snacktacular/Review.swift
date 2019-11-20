@@ -18,7 +18,7 @@ class Review{
     var documentID: String
     
     var dictionary: [String: Any]{
-        return ["title": title, "text": text, "rating": rating, "reviewerUserID": reviewerUserID, "date": date, "documentID": documentID]
+        return ["title": title, "text": text, "rating": rating, "reviewerUserID": reviewerUserID, "date": date]
     }
     
     init(title: String, text: String, rating: Int, reviewerUserID: String, date: Date, documentID: String ){
@@ -58,7 +58,9 @@ class Review{
                     completed(false)
                 } else{
                     print("^^^ Document updated with ref ID \(ref.documentID)")
-                    completed(true)
+                    spot.updateAverageRating {
+                        completed(true)
+                    }
                 }
             }
         }else{
@@ -69,7 +71,9 @@ class Review{
                     completed(false)
                 } else{
                     print("^^^ Document new doc created with ref ID \(ref?.documentID ?? "Unknown")")
-                    completed(true)
+                    spot.updateAverageRating {
+                        completed(true)
+                    }
                 }
             }
         }
@@ -81,7 +85,9 @@ class Review{
             if let error = error {
                 print("😡😡😡 ERROR: deleting review documentID \(self.documentID) \(error.localizedDescription)")
             } else{
-                completed(true)
+                spot.updateAverageRating {
+                    completed(true)
+                }
             }
         }
         
