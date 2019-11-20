@@ -14,10 +14,11 @@ import GoogleSignIn
 
 class SpotsListViewController: UIViewController {
     @IBOutlet weak var sortSegmentedControl: UISegmentedControl!
-    
     @IBOutlet weak var tableView: UITableView!
+    
     var spots: Spots!
     var authUI: FUIAuth!
+    var snackUser: SnackUser!
     var locationManager: CLLocationManager!
     var currentLocation: CLLocation!
     
@@ -52,11 +53,14 @@ class SpotsListViewController: UIViewController {
             FUIGoogleAuth(),
             FUIEmailAuth(),
         ]
+        let currentUser = authUI.auth?.currentUser
         if authUI.auth?.currentUser == nil {
             self.authUI?.providers = providers
             present(authUI.authViewController(), animated: true, completion: nil)
         }else{
             tableView.isHidden = false
+            snackUser = SnackUser(user: currentUser!)
+            snackUser.saveIfNewUser()
         }
         
     }
